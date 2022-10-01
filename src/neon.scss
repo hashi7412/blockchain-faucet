@@ -1,0 +1,221 @@
+@font-face {
+	font-family: myFirstFont;
+	src: url(./assets/neon/fonts/ChakraPetch-Regular.ttf);
+}
+
+:root {
+	--success:				#00c9a7;
+	--success-bg:			rgba(0,201,167,.1);
+	--danger:				#de4437;
+    --danger-bg:			#ffefff;
+
+	--bg-body:				white;
+	--bg-link:				#337afe;
+	--bg-hover:				black;
+	--bg-active:			black;
+	--bg-header:			rgb(24, 24, 24);
+	--bg-badge:				rgba(119,131,143,.1);
+	--bg-card:				#f1f1f1;
+
+	--color:		 		#313438;
+	--color-link:			#337afe;
+	--color-hover:			#074ed2;
+	--color-active:			#322371;
+	--color-secondary:		#888;
+	--color-light:			white;
+
+
+    --bg-primary: linear-gradient(194.32deg, #6655D1 10.17%, #412FAA 89.83%);
+    --bg-dark-primary: linear-gradient(360deg, rgb(29, 26, 62) 0%, #312B6D 104.34%);
+    --shadow: rgba(45, 36, 146, 0.2);
+    --bg-lightprimary: linear-gradient(180deg, #FFFFFF 62.5%, #e0defa 100%);
+
+    --bg-primary-dark: linear-gradient(194.32deg, #6655D1 10.17%, #412FAA 89.83%);
+    --shadow-dark: rgba(164, 156, 255, 0.15);
+    --border-secondary: #363177;
+
+    --container-width: 1200px;
+    --sans-serif:		 	myFirstFont;
+	--monospace: 			SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+}
+
+body {
+    font-family: var(--sans-serif) !important;
+}
+
+body, #root, .root {
+    background: none !important;
+}
+
+.dark-theme {
+    --shadow: var(--shadow-dark);
+    --bg-lightprimary: var(--bg-body);
+}
+
+@mixin bg-primary1 {
+    background: linear-gradient(360deg, #1D1A3E 0%, #312B6D 104.34%) !important;
+    --border: var(--border-secondary) !important;
+}
+
+@mixin panel1 {
+    @include bg-primary1();
+    color: white !important;
+    span {
+        color: white !important;
+    }
+    h4 {
+        color: #e1da05;
+        font-weight: 400;
+        small {
+            color: white !important;
+            text-transform: initial;
+        }
+    }
+}
+
+@mixin panel-default {
+    background: linear-gradient(180deg, #FFFFFF 62.5%, #e0defa 100%) !important;
+    box-shadow: 0px 10px 20px 1px var(--shadow) !important;
+    border-radius: 3px !important;
+}
+
+@mixin primary-btn {
+    background: var(--bg-primary) !important;
+    color: var(--color-dark);
+    border: none;
+
+    &:hover:not(:disabled) {
+        color: var(--color-link);
+
+        & * {
+            color: var(--color-link);
+        }
+    }
+
+    &:active:not(:disabled) {
+        color: var(--color-active);
+
+        & * {
+            color: var(--color-light);
+        }
+    }
+}
+
+@mixin tabpanel1($dft, $atv) {
+    @include panel-default();
+    .tab-links {
+        display: flex;
+        align-items: center;
+        button {
+            flex: 1;
+            font-weight: 600 !important;
+            color: var(--color) !important;
+            box-shadow: none !important;
+            border-bottom: 3px solid $dft;
+            &.active {
+                border-bottom: 3px solid $atv;
+            }
+        }
+    }
+    .panel-content {
+        >div {
+            background: none !important;
+            box-shadow: none !important;
+        }
+    }
+}
+
+@mixin table1{
+    // .tbl-header {
+    //     display: none;
+    // }
+    // .tbl-footer {
+    //     justify-content: center;
+    //     gap: 2rem;
+    // }
+}
+
+section {
+    .form {
+        @include panel-default();
+    }
+
+    > h1 {
+        color: var(--color-active);
+        font-weight: 600;
+        text-transform: uppercase;
+        text-align: center;
+        justify-content: center;
+        margin-bottom: 0em;
+    }
+
+    button {
+
+    }
+}
+
+.bg {
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    & >div:nth-child(1) {
+        height: 250px;
+        background-color: var(--bg-body);
+    }
+    & >div:nth-child(2) {
+        height: 15px;
+        background-color: #e1da05;
+    }
+    & >div:nth-child(3) {
+        height: 350px;
+        background: #1D1A3E url(./assets/neon/bg1.svg) no-repeat center center;
+        background-size: cover;
+    }
+    & >div:nth-child(4) {
+        position: relative;
+        flex: 1;
+        overflow: hidden;
+        >div:nth-child(1) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            background: url(./assets/neon/bg2.png) repeat-x left -140%;
+            width: 100%;
+            height: 300px;
+            margin-bottom: -150px;
+        }
+        >div:nth-child(2) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(360deg, #7E73FF 0%, rgba(195, 190, 255, 0.81) 120%) no-repeat center center;
+            background-size: cover;
+        }
+        >div:nth-child(3) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url(./assets/neon/bg4.svg) no-repeat center -500px;
+            background-size: cover;
+            opacity: 0.4;
+        }
+    }
+    & >div:nth-child(5) {
+        height: 10px;
+        background: #CAED3C;
+        background-size: cover;
+    }
+}

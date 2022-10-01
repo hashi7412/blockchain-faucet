@@ -1,0 +1,23 @@
+{
+	"app.title": "Neon Testnet: Faucet",
+	"app.desc": "Get testnet coin for an account on one of the supported blockchain testnets so you can create and test your own smart contract.",
+	"app.keyword": "Neon, faucet, testnet",
+	"faucet.success.1": "Your request submited successfully.",
+	"faucet.success.2": "You will get testnet coin(s) within 1 min.",
+
+	"title": "Request testnet coin",
+
+	"error.10001": "Invalid address format",
+	"error.10002": "Please verify captcha",
+
+	"error.20000":"captcha error",
+	"error.20001":"You have already enough balance",
+
+	"error.32700":"Invalid JSON was received by the server. An error occurred on the server while parsing the JSON text.",
+	"error.32600":	"The JSON sent is not a valid Request object.",
+	"error.32601":	"The method does not exist / is not available.",
+	"error.32602":	"Invalid method parameter(s).",
+	"error.32603":	"Internal JSON-RPC error.",
+	"error.32000":	"Reserved for implementation-defined server-errors.",
+	"-1":	"Network disconnected"
+}
